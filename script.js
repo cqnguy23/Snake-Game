@@ -170,7 +170,7 @@ gen_food();
 function draw() {
     
     ctx.clearRect(0, 0, canvas.width, canvas.height);
-    if (score == 10) {
+    if (score == 20) {
         alert("Congratulations! You've Won!");
         clearInterval(interval);
         document.location.reload();
@@ -179,6 +179,7 @@ function draw() {
     loadImages();
     drawBackground();
     if (snake[0].x < 0 || snake[0].x >= canvas.width || snake[0].y < 0 || snake[0].y >= canvas.height) {
+        alert("You hit your head in the electrified fence. Game Over!");
         clearInterval(interval);
         document.location.reload();
         return;
